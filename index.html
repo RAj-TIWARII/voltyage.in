@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensure proper viewport scaling for mobile devices -->
+    <title>V O L T V O Y A G E</title> <!-- Updated title -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> <!-- Include Font Awesome CSS -->
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7; /* Set background color to a very light gray in light mode */
+            transition: background-color 0.5s; /* Smooth transition for background color change */
+        }
+        header {
+            background-color: #000; /* Set background color of the header to black */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 5vw; /* Use viewport width units for font size */
+            font-family: 'YourUniqueFont', sans-serif; /* Replace 'YourUniqueFont' with your desired font */
+            letter-spacing: 2px; /* Reduce letter spacing for closer letters */
+            text-transform: uppercase; /* Make text uppercase */
+            display: inline-block; /* Make the title and icon appear on the same line */
+            margin-right: 10px;
+        }
+        /* Styling for the icons */
+        .icons {
+            font-size: 40px; /* Adjust the font size for the icons */
+            margin-top: 12vh; /* Approx. 6 text lines below the title */
+        }
+        /* Styling for the side navigation */
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 1; /* Ensure the navigation is above other content */
+        }
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidenav a i {
+            padding-right: 10px;
+        }
+        .sidenav a span {
+            font-size: 20px; /* Adjust the font size for the names */
+            margin-left: 10px; /* Add margin to separate icon and name */
+        }
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+        .menu-icon {
+            font-size: 20px; /* Adjust the font size to make the menu icon smaller */
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            color: #fff;
+            border-radius: 50%; /* Make it circular */
+            background-color: rgba(0, 0, 0, 0.5); /* Background color with transparency */
+            padding: 5px; /* Add padding to create space around the icon */
+        }
+        /* Styling for the welcome message */
+        .welcome-message {
+            text-align: left;
+            color: #888;
+            font-size: 18px;
+            margin: 20px;
+            line-height: 1.5; /* Adjust line height for readability */
+        }
+        .welcome-message p:first-child {
+            font-size: 24px; /* Larger font size for the first paragraph */
+            font-family: 'YourBubbleFont', sans-serif; /* Use your bubble-like font */
+            font-weight: bold; /* Make it bold */
+        }
+        /* Styling for the lamp icon */
+        .lamp-icon {
+            font-size: 30px; /* Adjust the font size for the lamp icon */
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        /* Styling for dark mode */
+        body.dark-mode {
+            background-color: #111; /* Set background color to black in dark mode */
+            color: #fff; /* Set text color to white in dark mode */
+        }
+        /* Styling for programming language icons at the bottom */
+        .language-icons {
+            font-size: 50px; /* Adjust the font size for the language icons */
+            color: #fff; /* Set color to white */
+            margin-top: 20px; /* Add space below the text */
+            text-align: center; /* Center align the icons */
+        }
+        .language-icons a {
+            text-decoration: none; /* Remove underlines from the links */
+            margin: 0 15px; /* Add space between icons */
+        }
+    </style>
+</head>
+<body class="dark-mode"> <!-- Add the "dark-mode" class to start in dark mode -->
+    <header>
+        <h1>V O L T V O Y A G E <i class="fas fa-dragon"></i></h1> <!-- Updated title with dragon icon -->
+        <div class="icons">
+            <i class="fas fa-code"></i> | <!-- HTML code icon with separator -->
+            <i class="fas fa-gamepad"></i> <!-- Game icon -->
+        </div>
+        <div class="menu-icon" onclick="openNav()">&#9776;</div>
+    </header>
+
+    <!-- Welcome message and other text -->
+    <div class="welcome-message">
+        <p>
+            Hello! Welcome to VOLTVOYAGE.
+        </p>
+        <p>
+            I'm Raj Tiwari, and I'm learning to become a professional web developer. That's why I created this site where I can learn and share knowledge about the basics of programming, including HTML, CSS, Python, JavaScript, and Java.
+        </p>
+    </div>
+    
+    <!-- Add the rest of your page content here -->
+
+    <!-- The side navigation menu -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#"><i class="fas fa-home"></i><span>Home</span></a> <!-- Home icon with name -->
+        <a href="#"><i class="fas fa-link"></i><span>Links</span></a> <!-- Link icon with name -->
+        <a href="#"><i class="fas fa-search"></i><span>Search</span></a> <!-- Search icon with name -->
+        <a href="#"><i class="fas fa-user"></i><span>About Me</span></a> <!-- Person icon with name -->
+        <a href="#"><i class="fas fa-gamepad"></i><span>Explore Games</span></a> <!-- Games icon with name -->
+        <a href="#"><i class="fas fa-question"></i><span>Help</span></a> <!-- Help icon with name -->
+        <a href="#"><i class="fas fa-adjust"></i><span>Theme</span></a> <!-- Theme icon with name -->
+    </div>
+
+    <!-- Lamp icon for toggling light/dark mode -->
+    <div class="lamp-icon" onclick="toggleDarkMode()">
+        <i class="fas fa-lightbulb"></i>
+    </div>
+
+    <!-- Programming language icons with links -->
+    <div class="language-icons">
+        <!-- HTML icon linking to https://web222.ca/weeks/week06/ -->
+        <a href="https://web222.ca/weeks/week06/" target="_blank"><i class="fab fa-html5"></i></a>
+        <!-- CSS icon linking to your CSS page -->
+        <a href="#"><i class="fab fa-css3"></i></a>
+        <!-- Python icon linking to your Python page -->
+        <a href="#"><i class="fab fa-python"></i></a>
+        <!-- JavaScript icon linking to your JavaScript page -->
+        <a href="#"><i class="fab fa-js"></i></a>
+        <!-- Java icon linking to your Java page -->
+        <a href="#"><i class="fab fa-java"></i></a>
+    </div>
+
+    <!-- JavaScript to open and close the side navigation and toggle dark mode -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+</html>
